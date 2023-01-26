@@ -31,5 +31,6 @@ public class minimumCoins {
         int[] numCoins = new int[18];
         Arrays.fill(numCoins, -1);
         System.out.println(minCoins(n, coins, numCoins));
+        System.out.println("sexy");
     }
 }
