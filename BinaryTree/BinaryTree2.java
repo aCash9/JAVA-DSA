@@ -47,11 +47,30 @@ public class BinaryTree2 {
 
             return leftSum + rightSum + root.data;
         } 
+        public static int leftSum(Node root, int sum){
+            if(root == null)
+                return 0;
+            if(root.left == null)
+                return 0;
+    
+            if(root.left.left == null && root.left.right == null)
+                sum += root.left.data;
+            sum += leftSum(root.left,sum);
+            sum += leftSum(root.right,sum);
+    
+            return sum;
+        }
+
+        public static int sumOfLeftLeaves(Node root) {
+            int sum = leftSum(root,0);
+            return sum;
+        }
         public static void main(String[] args) {
-            int[] a = { 1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1 };
+            int[] a = { 3,9,20,-1,-1,15,7,-1,-1,-1,-1};
             Node root = buildTree(a);
-            System.out.println(numberOfNodes(root));
-            System.out.println(sumOfNodes(root));
+            int sum = sumOfLeftLeaves(root);
+            System.out.println(sum);
+            // System.out.println(sumOfNodes(root));
         }
     }
 }
