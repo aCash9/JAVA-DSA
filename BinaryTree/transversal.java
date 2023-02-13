@@ -2,7 +2,7 @@ package JavaDSA.BinaryTree;
 
 import java.util.*;
 
-public class BinaryTree {
+public class transversal {
     static class Node {
         int data;
         Node left;
