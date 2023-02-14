@@ -85,19 +85,21 @@ public class transversal {
 
             }
         }
-        public static void helper(Node root,ArrayList list, int level){
-            if(root==null)
+
+        public static void helper(Node root, ArrayList list, int level) {
+            if (root == null)
                 return;
-            if(list.get(level)==null)
+            if (list.get(level) == null)
                 list.add(root);
-            
-            helper(root.left, list, level+1);
-            helper(root.right, list, level+1);
+
+            helper(root.left, list, level + 1);
+            helper(root.right, list, level + 1);
         }
-        public static void leftView(Node root){
+
+        public static void leftView(Node root) {
             ArrayList<Node> list = new ArrayList<>();
-            helper(root,list,0);
-            for(Node i : list){
+            helper(root, list, 0);
+            for (Node i : list) {
                 System.out.println(i.data);
             }
         }
